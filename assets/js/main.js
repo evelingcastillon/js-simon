@@ -15,19 +15,41 @@
 console.log(getRandomInt(5))
  */
 
-var listaRandom = [];
+/* var listaRandom = [];
 for(var i = 0; i < 5; i++) {
-    var numeri = Math.ceil(Math.random()*30);
-    listaRandom.push(numeri)
+    var numeri = Math.ceil(Math.random()*99);
+    listaRandom.push(numeri.toString())
 }
+console.log(listaRandom);
 alert(listaRandom);
+ */
+function getRandomNumber(min,max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+var listaRandom = [];
+
+while (listaRandom.length < 5) {
+    var getNum = getRandomNumber(1,9);
+    if(!listaRandom.includes(getNum)) {
+        listaRandom.push(getNum);
+    }
+}
+
+console.log("i numeri generati sono: " + listaRandom);
+alert("i numeri generati sono: " + listaRandom);
 
 setTimeout(function(){
-    var numeriUtenti;
+    ;
     var listaUtente = []
+
     for(var i = 0; i < 5; i++) {
-        numeriUtenti = Number(prompt('Indovini i numeri precedenti'));
-        listaUtente.push(numeriUtenti);
+        var numeriUtenti= Number(prompt('Indovini i numeri precedenti'));
+        if (listaRandom.includes(numeriUtenti)) {
+            listaUtente.push(numeriUtenti);
+        }
     }
     console.log(listaUtente);
+    alert('hai indovinato ' + listaUtente.length + ' numeri, i numeri sono: ')
+
 }, 1000);
+
