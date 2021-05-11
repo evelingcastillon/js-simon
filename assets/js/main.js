@@ -39,7 +39,7 @@ console.log("i numeri generati sono: " + listaRandom);
 alert("i numeri generati sono: " + listaRandom);
 
 setTimeout(function(){
-    ;
+    
     var listaUtente = []
 
     for(var i = 0; i < 5; i++) {
@@ -51,5 +51,5 @@ setTimeout(function(){
     console.log(listaUtente);
     alert('hai indovinato ' + listaUtente.length + ' numeri, i numeri sono: ')
 
-}, 1000);
+}, 30000);
 
